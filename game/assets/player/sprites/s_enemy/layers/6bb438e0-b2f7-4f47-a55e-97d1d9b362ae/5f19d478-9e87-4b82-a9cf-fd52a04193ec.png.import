@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/5f19d478-9e87-4b82-a9cf-fd52a04193ec.png-16c906d552939b691856d85fa1082ab7.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://game/assets/player/sprites/s_enemy/layers/6bb438e0-b2f7-4f47-a55e-97d1d9b362ae/5f19d478-9e87-4b82-a9cf-fd52a04193ec.png"
+dest_files=[ "res://.import/5f19d478-9e87-4b82-a9cf-fd52a04193ec.png-16c906d552939b691856d85fa1082ab7.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
