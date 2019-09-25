@@ -32,7 +32,7 @@ minion_type = "light_minion"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
-frame = 14
+frame = 3
 playing = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]

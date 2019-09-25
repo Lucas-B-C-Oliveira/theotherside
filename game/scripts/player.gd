@@ -24,7 +24,7 @@ func _physics_process(delta):
 	took_minion()
 
 func _process(delta):
-	anim_movement_of_player()
+	pass
 
 ### Manager Inputs
 func move_input_manager():
@@ -33,61 +33,49 @@ func move_input_manager():
 		direction_x = 1
 		anim_x = 1
 		anim_y = 0
-	elif Input.is_action_just_released("ui_right"):
-		direction_x = 0 
-		anim_x = 2
-		anim_y = 0
+		$anim.play("run_right")
 		
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		direction_x = -1
 		anim_x = -1
 		anim_y = 0
-	elif Input.is_action_just_released("ui_left"):
-		direction_x = 0 
-		anim_x = -2
-		anim_y = 0
+		$anim.play("run_left")
+	else:
+		direction_x = 0
+		if direction_y == 0 and anim_y == 0:
+			if anim_x == 1:
+				$anim.play("idle_right")
+			elif anim_x == -1:
+				$anim.play("idle_left")
+		elif direction_y == 0 and anim_y != 0:
+			$anim.play("idle_down")
 	
 	if Input.is_action_pressed("ui_up"):
 		direction_y = -1
 		anim_y = 1
 		anim_x = 0
-	elif Input.is_action_just_released("ui_up"):
-		direction_y = 0
-		anim_y = 2
-		anim_x = 0
+		$anim.play("run_up")
 	
-	if Input.is_action_pressed("ui_down"): 
+	elif Input.is_action_pressed("ui_down"): 
 		direction_y = 1
 		anim_y = -1
 		anim_x = 0
-	elif Input.is_action_just_released("ui_down"):
-		direction_y = 0 
-		anim_y = -2
-		anim_x = 0
+		$anim.play("run_down")
+	else:
+		direction_y = 0
+		if direction_x == 0 and anim_x == 0:
+			if anim_y == 1:
+				$anim.play("idle_up")
+			elif anim_y == -1:
+				$anim.play("idle_down")
+		elif direction_x == 0 and anim_x != 0:
+			$anim.play("idle_up")
 
-### Functions of Movement
+
+### Function of Movement
 func move(delta):
 	move_and_slide(Vector2(direction_x , direction_y) * speed * delta)
 
-func anim_movement_of_player():
-	
-	if anim_x == 1:
-		$anim.play("run_right")
-	if anim_x == -1:
-		$anim.play("run_left")
-	if anim_x == 2:
-		$anim.play("idle_right")
-	if anim_x == -2:
-		$anim.play("idle_left")
-	
-	if anim_y == 1:
-		$anim.play("run_up")	
-	if anim_y == -1:
-		$anim.play("run_down")
-	if anim_y == 2:
-		$anim.play("idle_up")
-	if anim_y == -2:
-		$anim.play("idle_down")
 
 func get_minion(minion , minion_type):
 	i_took_minion = true
