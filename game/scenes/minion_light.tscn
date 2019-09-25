@@ -1,18 +1,19 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://game/assets/player/sprites2/46fede74-aaee-4613-9836-19558f5ebeae.png" type="Texture" id=1]
-[ext_resource path="res://game/assets/player/sprites2/0d928cff-fff0-4b1f-8729-c7358783d773.png" type="Texture" id=2]
-[ext_resource path="res://game/assets/player/sprites2/360edb06-e58a-40f5-9dd6-78155d1cd1d0.png" type="Texture" id=3]
-[ext_resource path="res://game/assets/player/sprites2/05f4214e-6746-41ac-b956-9193d832f0b9.png" type="Texture" id=4]
-[ext_resource path="res://game/assets/player/sprites2/30b67e37-a7fb-4108-9fdb-a221f172a04b.png" type="Texture" id=5]
-[ext_resource path="res://game/assets/player/sprites2/43a18aa2-5748-4657-b036-d9719fc053ae.png" type="Texture" id=6]
-[ext_resource path="res://game/assets/player/sprites2/dbb52f1f-cbb9-4eb1-a6a4-c379eecf9a01.png" type="Texture" id=7]
-[ext_resource path="res://game/assets/player/sprites2/d9c11835-a49f-46f7-9455-c9abb0016372.png" type="Texture" id=8]
-[ext_resource path="res://game/assets/player/sprites2/88bd67f7-762f-40c9-9f67-6d82a5023b49.png" type="Texture" id=9]
+[ext_resource path="res://game/scripts/minion_behaviour.gd" type="Script" id=1]
+[ext_resource path="res://game/assets/player/sprites2/46fede74-aaee-4613-9836-19558f5ebeae.png" type="Texture" id=2]
+[ext_resource path="res://game/assets/player/sprites2/0d928cff-fff0-4b1f-8729-c7358783d773.png" type="Texture" id=3]
+[ext_resource path="res://game/assets/player/sprites2/360edb06-e58a-40f5-9dd6-78155d1cd1d0.png" type="Texture" id=4]
+[ext_resource path="res://game/assets/player/sprites2/05f4214e-6746-41ac-b956-9193d832f0b9.png" type="Texture" id=5]
+[ext_resource path="res://game/assets/player/sprites2/30b67e37-a7fb-4108-9fdb-a221f172a04b.png" type="Texture" id=6]
+[ext_resource path="res://game/assets/player/sprites2/43a18aa2-5748-4657-b036-d9719fc053ae.png" type="Texture" id=7]
+[ext_resource path="res://game/assets/player/sprites2/dbb52f1f-cbb9-4eb1-a6a4-c379eecf9a01.png" type="Texture" id=8]
+[ext_resource path="res://game/assets/player/sprites2/d9c11835-a49f-46f7-9455-c9abb0016372.png" type="Texture" id=9]
+[ext_resource path="res://game/assets/player/sprites2/88bd67f7-762f-40c9-9f67-6d82a5023b49.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -22,14 +23,27 @@ animations = [ {
 extents = Vector2( 2.3, 2.3 )
 
 [node name="minion_light" type="RigidBody2D"]
+collision_layer = 2
+mode = 2
 gravity_scale = 0.0
+script = ExtResource( 1 )
+minion_type = "light_minion"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
 frames = SubResource( 1 )
-frame = 11
+frame = 14
 playing = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 scale = Vector2( 2.5, 2.5 )
 shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2( 2.5, 2.5 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_minion_light_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_minion_light_body_shape_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

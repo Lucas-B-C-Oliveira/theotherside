@@ -19,10 +19,19 @@ config/name="TheOtherSideV2"
 run/main_scene="res://game/scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+game_manager="*res://game/scripts/game_manager.gd"
+
 [display]
 
 window/size/width=1280
 window/size/height=992
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="minion"
 
 [rendering]
 

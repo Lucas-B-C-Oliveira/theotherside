@@ -9,6 +9,8 @@ var speed = 10000
 var anim_x = 0
 var anim_y = 0
 
+var i_took_minion = false
+var current_minion
 
 func _ready():
 	pass 
@@ -19,6 +21,7 @@ func _input(event):
 
 func _physics_process(delta):
 	move(delta)
+	took_minion()
 
 func _process(delta):
 	anim_movement_of_player()
@@ -86,7 +89,14 @@ func anim_movement_of_player():
 	if anim_y == -2:
 		$anim.play("idle_down")
 
+func get_minion(minion , minion_type):
+	i_took_minion = true
+	current_minion = minion
+	game_manager.minion_type = minion_type
 
+func took_minion():
+	if i_took_minion:
+		current_minion.global_position = $hand.global_position
 
 
 
