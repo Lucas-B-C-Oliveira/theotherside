@@ -1,38 +1,66 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://game/scripts/player.gd" type="Script" id=1]
-[ext_resource path="res://game/assets/player/sprites/s_player_F/752dd428-0dee-4ae2-b230-60040bb2a4fb.png" type="Texture" id=2]
-[ext_resource path="res://game/assets/player/sprites/s_player_F/b88884ae-bed5-4928-af40-038489bcc98a.png" type="Texture" id=3]
-[ext_resource path="res://game/assets/player/sprites/s_player_F/c4b22974-3864-407e-85c7-fc6779dd7515.png" type="Texture" id=4]
-[ext_resource path="res://game/assets/player/sprites/s_player_F/fcd0f3b7-9ca6-45c8-b465-fe16f3e4a6f3.png" type="Texture" id=5]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_F/5e9a4cb5-b4cf-4884-8d1d-c659d7bf8bfb.png" type="Texture" id=6]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_F/12e74b75-5ed0-40c6-bd3c-c0a84eefa7a9.png" type="Texture" id=7]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_F/8318fd19-bc15-4164-b09d-8868e3d51064.png" type="Texture" id=8]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_F/d092dc79-026b-461f-9723-c0c13eb7d000.png" type="Texture" id=9]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S/3aa132c7-e3e3-41ff-9e80-d7c7737622e3.png" type="Texture" id=10]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S/7310f2f9-f24e-4398-afc3-e9c551b037c6.png" type="Texture" id=11]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S/3288212f-1749-4ca2-bb18-995508590d65.png" type="Texture" id=12]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S/ef1baa3a-1160-471c-9b61-aad1b145a483.png" type="Texture" id=13]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_B/76feb1d9-0924-416a-a07c-0fc454b4e4c9.png" type="Texture" id=14]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_B/b7f43551-3634-455b-a9be-215abf4c483d.png" type="Texture" id=15]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_B/ceb9b103-0ddf-40a1-b4a7-c79448f13168.png" type="Texture" id=16]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_B/e8b153a0-b268-4f40-96e0-4370450bd574.png" type="Texture" id=17]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/idle_left2.png" type="Texture" id=18]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/idle_left3.png" type="Texture" id=19]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/idle_left44.png" type="Texture" id=20]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/idle_left.png" type="Texture" id=21]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S - Copia (2)/left1.png" type="Texture" id=22]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S - Copia (2)/left2.png" type="Texture" id=23]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S - Copia (2)/left3.png" type="Texture" id=24]
-[ext_resource path="res://game/assets/player/sprites/s_player_run_S - Copia (2)/left4.png" type="Texture" id=25]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/1bd596da-aa95-4c75-9c21-c684831f2bb0.png" type="Texture" id=26]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/ab2a1499-a8e8-4947-976f-735d7694159e.png" type="Texture" id=27]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/bae63143-a4ec-44eb-8365-63c12fdd889f.png" type="Texture" id=28]
-[ext_resource path="res://game/assets/player/sprites/s_player_S/e01b22e8-b311-46db-a299-293066a03ac0.png" type="Texture" id=29]
-[ext_resource path="res://game/assets/player/sprites/s_player_B/0b330422-1a01-4a9e-9124-df4a4d64951a.png" type="Texture" id=30]
-[ext_resource path="res://game/assets/player/sprites/s_player_B/7af069a4-59f3-4cd8-b062-bc21cf6b42b1.png" type="Texture" id=31]
-[ext_resource path="res://game/assets/player/sprites/s_player_B/66b14c8c-6b61-48a4-a35e-230bdf98e38a.png" type="Texture" id=32]
-[ext_resource path="res://game/assets/player/sprites/s_player_B/fe24c795-a56d-4e2d-8e2a-693f120426d4.png" type="Texture" id=33]
+[ext_resource path="res://game/assets/player/sprites/player_idle_down/752dd428-0dee-4ae2-b230-60040bb2a4fb.png" type="Texture" id=2]
+[ext_resource path="res://game/assets/player/sprites/player_idle_down/b88884ae-bed5-4928-af40-038489bcc98a.png" type="Texture" id=3]
+[ext_resource path="res://game/assets/player/sprites/player_idle_down/c4b22974-3864-407e-85c7-fc6779dd7515.png" type="Texture" id=4]
+[ext_resource path="res://game/assets/player/sprites/player_idle_down/fcd0f3b7-9ca6-45c8-b465-fe16f3e4a6f3.png" type="Texture" id=5]
+[ext_resource path="res://game/assets/player/sprites/player_run_up/76feb1d9-0924-416a-a07c-0fc454b4e4c9.png" type="Texture" id=6]
+[ext_resource path="res://game/assets/player/sprites/player_run_up/b7f43551-3634-455b-a9be-215abf4c483d.png" type="Texture" id=7]
+[ext_resource path="res://game/assets/player/sprites/player_run_up/ceb9b103-0ddf-40a1-b4a7-c79448f13168.png" type="Texture" id=8]
+[ext_resource path="res://game/assets/player/sprites/player_left_Idle/idle_left2.png" type="Texture" id=9]
+[ext_resource path="res://game/assets/player/sprites/player_left_Idle/idle_left3.png" type="Texture" id=10]
+[ext_resource path="res://game/assets/player/sprites/player_left_Idle/idle_left44.png" type="Texture" id=11]
+[ext_resource path="res://game/assets/player/sprites/player_left_Idle/idle_left.png" type="Texture" id=12]
+[ext_resource path="res://game/assets/player/sprites/player_run_down/5e9a4cb5-b4cf-4884-8d1d-c659d7bf8bfb.png" type="Texture" id=13]
+[ext_resource path="res://game/assets/player/sprites/player_run_down/12e74b75-5ed0-40c6-bd3c-c0a84eefa7a9.png" type="Texture" id=14]
+[ext_resource path="res://game/assets/player/sprites/player_run_down/8318fd19-bc15-4164-b09d-8868e3d51064.png" type="Texture" id=15]
+[ext_resource path="res://game/assets/player/sprites/player_run_down/d092dc79-026b-461f-9723-c0c13eb7d000.png" type="Texture" id=16]
+[ext_resource path="res://game/assets/player/sprites/player_run_right/right_run_1.png" type="Texture" id=17]
+[ext_resource path="res://game/assets/player/sprites/player_run_right/right_run_3.png" type="Texture" id=18]
+[ext_resource path="res://game/assets/player/sprites/player_run_right/right_run_4.png" type="Texture" id=19]
+[ext_resource path="res://game/assets/player/sprites/player_idle_right/idle_right1.png" type="Texture" id=20]
+[ext_resource path="res://game/assets/player/sprites/player_idle_right/idle_right2.png" type="Texture" id=21]
+[ext_resource path="res://game/assets/player/sprites/player_idle_right/idle_right3.png" type="Texture" id=22]
+[ext_resource path="res://game/assets/player/sprites/player_idle_right/idle_right4.png" type="Texture" id=23]
+[ext_resource path="res://game/assets/player/sprites/player_run_left/left1.png" type="Texture" id=24]
+[ext_resource path="res://game/assets/player/sprites/player_run_left/left2.png" type="Texture" id=25]
+[ext_resource path="res://game/assets/player/sprites/player_run_left/left3.png" type="Texture" id=26]
+[ext_resource path="res://game/assets/player/sprites/player_idle_up/0b330422-1a01-4a9e-9124-df4a4d64951a.png" type="Texture" id=27]
+[ext_resource path="res://game/assets/player/sprites/player_idle_up/7af069a4-59f3-4cd8-b062-bc21cf6b42b1.png" type="Texture" id=28]
+[ext_resource path="res://game/assets/player/sprites/player_idle_up/66b14c8c-6b61-48a4-a35e-230bdf98e38a.png" type="Texture" id=29]
+[ext_resource path="res://game/assets/player/sprites/player_idle_up/fe24c795-a56d-4e2d-8e2a-693f120426d4.png" type="Texture" id=30]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_up/0b330422-1a01-4a9e-9124-df4a4d64951a.png" type="Texture" id=31]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_up/7af069a4-59f3-4cd8-b062-bc21cf6b42b1.png" type="Texture" id=32]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_up/66b14c8c-6b61-48a4-a35e-230bdf98e38a.png" type="Texture" id=33]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_up/fe24c795-a56d-4e2d-8e2a-693f120426d4.png" type="Texture" id=34]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_right/idle_right1.png" type="Texture" id=35]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_right/idle_right2.png" type="Texture" id=36]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_right/idle_right3.png" type="Texture" id=37]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_right/idle_right4.png" type="Texture" id=38]
+[ext_resource path="res://game/assets/player/sprites/red/player_left_Idle/idle_left2.png" type="Texture" id=39]
+[ext_resource path="res://game/assets/player/sprites/red/player_left_Idle/idle_left3.png" type="Texture" id=40]
+[ext_resource path="res://game/assets/player/sprites/red/player_left_Idle/idle_left.png" type="Texture" id=41]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_down/5e9a4cb5-b4cf-4884-8d1d-c659d7bf8bfb.png" type="Texture" id=42]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_down/12e74b75-5ed0-40c6-bd3c-c0a84eefa7a9.png" type="Texture" id=43]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_down/8318fd19-bc15-4164-b09d-8868e3d51064.png" type="Texture" id=44]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_down/d092dc79-026b-461f-9723-c0c13eb7d000.png" type="Texture" id=45]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_up/76feb1d9-0924-416a-a07c-0fc454b4e4c9.png" type="Texture" id=46]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_up/b7f43551-3634-455b-a9be-215abf4c483d.png" type="Texture" id=47]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_up/ceb9b103-0ddf-40a1-b4a7-c79448f13168.png" type="Texture" id=48]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_up/e8b153a0-b268-4f40-96e0-4370450bd574.png" type="Texture" id=49]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_down/752dd428-0dee-4ae2-b230-60040bb2a4fb.png" type="Texture" id=50]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_down/b88884ae-bed5-4928-af40-038489bcc98a.png" type="Texture" id=51]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_down/c4b22974-3864-407e-85c7-fc6779dd7515.png" type="Texture" id=52]
+[ext_resource path="res://game/assets/player/sprites/red/player_idle_down/fcd0f3b7-9ca6-45c8-b465-fe16f3e4a6f3.png" type="Texture" id=53]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_right/right_run_1.png" type="Texture" id=54]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_right/right_run_2.png" type="Texture" id=55]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_right/right_run_3.png" type="Texture" id=56]
+[ext_resource path="res://game/assets/player/sprites/red/player_run_right/right_run_4.png" type="Texture" id=57]
+[ext_resource path="res://game/assets/player/sprites/red/player_left/left1.png" type="Texture" id=58]
+[ext_resource path="res://game/assets/player/sprites/red/player_left/left2.png" type="Texture" id=59]
+[ext_resource path="res://game/assets/player/sprites/red/player_left/left3.png" type="Texture" id=60]
+[ext_resource path="res://game/assets/player/sprites/red/player_left/left4.png" type="Texture" id=61]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -41,40 +69,80 @@ animations = [ {
 "name": "idle_down",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "run_down",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "run_right",
-"speed": 14.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "run_up",
 "speed": 14.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "idle_left",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
-"name": "run_left",
+"name": "run_down",
 "speed": 14.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "run_right",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "idle_right",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "run_left",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "idle_up",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ],
+"loop": true,
+"name": "idle_up_damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "idle_right_damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "idle_left_damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "run_down_damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
+"loop": true,
+"name": "run_up_damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "idle_down_damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "run_right_damage",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "run_left_damage",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -89,6 +157,7 @@ script = ExtResource( 1 )
 [node name="anim" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "idle_down"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -96,3 +165,6 @@ shape = SubResource( 2 )
 
 [node name="hand" type="Position2D" parent="."]
 position = Vector2( 8.97093, -1.35276 )
+
+[node name="Timer_Damaged" type="Timer" parent="."]
+[connection signal="timeout" from="Timer_Damaged" to="." method="_on_Timer_Damaged_timeout"]

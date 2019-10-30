@@ -9,8 +9,8 @@ var speed = 10000
 var anim_x = 0
 var anim_y = 0
 
-var i_took_minion = false
-var current_minion
+var life = 100
+var damaged = false
 
 func _ready():
 	pass 
@@ -21,84 +21,114 @@ func _input(event):
 
 func _physics_process(delta):
 	move(delta)
-	took_minion()
 
 func _process(delta):
-	pass
+	move_input_manager()
 
 ### Manager Inputs
 func move_input_manager():
 	
-	if Input.is_action_pressed("ui_right"):
-		direction_x = 1
-		anim_x = 1
-		anim_y = 0
-		$anim.play("run_right")
+	var UI_Vertical_Check = !Input.is_action_pressed("ui_up") and !Input.is_action_pressed("ui_down")
+	var UI_Horizontal_Check = !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left")
+	
+	if !damaged:
 		
-	elif Input.is_action_pressed("ui_left"):
-		direction_x = -1
-		anim_x = -1
-		anim_y = 0
-		$anim.play("run_left")
-	else:
-		direction_x = 0
-		if direction_y == 0 and anim_y == 0:
-			if anim_x == 1:
-				$anim.play("idle_right")
-			elif anim_x == -1:
-				$anim.play("idle_left")
-		elif direction_y == 0 and anim_y != 0:
+		if Input.is_action_pressed("ui_right"):
+			direction_x = 1
+			anim_x = 1
+			anim_y = 0
+			$anim.play("run_right")
+			
+		elif Input.is_action_pressed("ui_left"):
+			direction_x = -1
+			anim_x = -1
+			anim_y = 0
+			$anim.play("run_left")
+			
+		elif UI_Vertical_Check:
+			direction_x = 0
 			$anim.play("idle_down")
-	
-	if Input.is_action_pressed("ui_up"):
-		direction_y = -1
-		anim_y = 1
-		anim_x = 0
-		$anim.play("run_up")
-	
-	elif Input.is_action_pressed("ui_down"): 
-		direction_y = 1
-		anim_y = -1
-		anim_x = 0
-		$anim.play("run_down")
+		else:
+			direction_x = 0
+		
+		if Input.is_action_pressed("ui_up"):
+			direction_y = -1
+			anim_y = 1
+			anim_x = 0
+			$anim.play("run_up")
+		
+		elif Input.is_action_pressed("ui_down"): 
+			direction_y = 1
+			anim_y = -1
+			anim_x = 0
+			$anim.play("run_down")
+			
+		elif UI_Horizontal_Check:
+			direction_y = 0
+			$anim.play("idle_down")
+		else:
+			direction_y = 0
 	else:
-		direction_y = 0
-		if direction_x == 0 and anim_x == 0:
-			if anim_y == 1:
-				$anim.play("idle_up")
-			elif anim_y == -1:
-				$anim.play("idle_down")
-		elif direction_x == 0 and anim_x != 0:
-			$anim.play("idle_up")
+		if Input.is_action_pressed("ui_right"):
+			direction_x = 1
+			anim_x = 1
+			anim_y = 0
+			$anim.play("run_right_damage")
+			
+		elif Input.is_action_pressed("ui_left"):
+			direction_x = -1
+			anim_x = -1
+			anim_y = 0
+			$anim.play("run_left_damage")
+			
+		elif UI_Vertical_Check:
+			direction_x = 0
+			$anim.play("idle_down_damage")
+		else:
+			direction_x = 0
+		
+		if Input.is_action_pressed("ui_up"):
+			direction_y = -1
+			anim_y = 1
+			anim_x = 0
+			$anim.play("run_up_damage")
+		
+		elif Input.is_action_pressed("ui_down"): 
+			direction_y = 1
+			anim_y = -1
+			anim_x = 0
+			$anim.play("run_down_damage")
+			
+		elif UI_Horizontal_Check:
+			direction_y = 0
+			$anim.play("idle_down_damage")
+		else:
+			direction_y = 0
+
 
 
 ### Function of Movement
 func move(delta):
 	move_and_slide(Vector2(direction_x , direction_y) * speed * delta)
 
-
-func get_minion(minion , minion_type):
-	i_took_minion = true
-	current_minion = minion
-	game_manager.minion_type = minion_type
-
-func took_minion():
-	if i_took_minion:
-		current_minion.global_position = $hand.global_position
-
-
-
-
-
-
-
-
-
-
+func set_damage(value):
+	life -= value
+	
+	if value > 93:
+		damaged = true
+		$Timer_Damaged.start(.4)
+	elif value > 83 and value <= 93:
+		damaged = true
+		$Timer_Damaged.start(.4)
+	elif value <= 83 and value > 50:
+		damaged = true
+		$Timer_Damaged.start(.4)
+	elif value <= 50:
+		damaged = true
+		$Timer_Damaged.start(.4)
+	
+	print(life)
 
 
-
-
-
-
-
+func _on_Timer_Damaged_timeout():
+	damaged = false

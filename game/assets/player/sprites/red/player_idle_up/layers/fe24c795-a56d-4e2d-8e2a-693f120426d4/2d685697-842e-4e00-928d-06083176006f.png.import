@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/2d685697-842e-4e00-928d-06083176006f.png-b3d2bbb05524ca9bf20e6bf86ffebf87.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://game/assets/player/sprites/red/player_idle_up/layers/fe24c795-a56d-4e2d-8e2a-693f120426d4/2d685697-842e-4e00-928d-06083176006f.png"
+dest_files=[ "res://.import/2d685697-842e-4e00-928d-06083176006f.png-b3d2bbb05524ca9bf20e6bf86ffebf87.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://game/scripts/minion_behaviour.gd" type="Script" id=1]
 [ext_resource path="res://game/assets/player/sprites2/46fede74-aaee-4613-9836-19558f5ebeae.png" type="Texture" id=2]
@@ -22,12 +22,12 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 2.3, 2.3 )
 
-[node name="minion_light" type="RigidBody2D"]
+[sub_resource type="CircleShape2D" id=3]
+radius = 9.35371
+
+[node name="minion_light" type="KinematicBody2D"]
 collision_layer = 2
-mode = 2
-gravity_scale = 0.0
 script = ExtResource( 1 )
-minion_type = "light_minion"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 2.5, 2.5 )
@@ -43,7 +43,9 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 scale = Vector2( 2.5, 2.5 )
-shape = SubResource( 2 )
-[connection signal="body_entered" from="." to="." method="_on_minion_light_body_entered"]
-[connection signal="body_shape_entered" from="." to="." method="_on_minion_light_body_shape_entered"]
+shape = SubResource( 3 )
+
+[node name="timerAttack" type="Timer" parent="."]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="timerAttack" to="." method="_on_timerAttack_timeout"]

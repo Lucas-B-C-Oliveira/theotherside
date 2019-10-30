@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/3aa132c7-e3e3-41ff-9e80-d7c7737622e3.png-662952a14af6f51e127f5ee2bf5e24ea.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://game/assets/player/sprites/player_run_left/3aa132c7-e3e3-41ff-9e80-d7c7737622e3.png"
+dest_files=[ "res://.import/3aa132c7-e3e3-41ff-9e80-d7c7737622e3.png-662952a14af6f51e127f5ee2bf5e24ea.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
