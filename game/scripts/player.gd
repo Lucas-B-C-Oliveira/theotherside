@@ -12,6 +12,8 @@ var anim_y = 0
 var life = 100
 var damaged = false
 
+var blue_box = false
+
 func _ready():
 	pass 
 
@@ -112,6 +114,10 @@ func move(delta):
 	move_and_slide(Vector2(direction_x , direction_y) * speed * delta)
 
 func set_damage(value):
+	
+	if life < 0:
+		playerDie()
+	
 	life -= value
 	
 	if value > 93:
@@ -132,3 +138,6 @@ func set_damage(value):
 
 func _on_Timer_Damaged_timeout():
 	damaged = false
+
+func playerDie():
+	get_parent().restartGame()
